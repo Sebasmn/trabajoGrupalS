@@ -5,19 +5,31 @@
     <meta charset="utf-8" />
     <title>Prueba consumo de servicio REST</title>
     <script>
-        fetch('https://www.raydelto.org/json.php')
+
+        fetch('http://localhost:41531/api/ProductArq')
             .then((respuesta) => {
                 return respuesta.json();
             }).then((respuesta) => {
-                document.getElementById('nombre').value = respuesta.name;
-                document.getElementById('apellido').value = respuesta.lastName;
+                debugger
+                document.getElementById('categoryID').value = respuesta.CategoryID;
+                document.getElementById('discontinued').value = respuesta.Discontinued;
+                document.getElementById('productID').value = respuesta.ProductID;
+                document.getElementById('productName').value = respuesta.ProductName;
+                document.getElementById('quantityPerUnit').value = respuesta.QuantityPerUnit;
+                document.getElementById('supplierID').value = respuesta.SupplierID;
+                document.getElementById('unitPrice').value = respuesta.UnitPrice;
             })
     </script>
 </head>
 <body>
     <div id="informacion">
-        <input type="text" id="nombre" value="cargando..." />
-        <input type="text" id="apellido" value="cargando..." />
+        <input type="text" id="categoryID" value="cargando..." />
+        <input type="text" id="discontinued" value="cargando..." />
+        <input type="text" id="productID" value="cargando..." />
+        <input type="text" id="productName" value="cargando..." />
+        <input type="text" id="quantityPerUnit" value="cargando..." />
+        <input type="text" id="supplierID" value="cargando..." />
+        <input type="text" id="unitPrice" value="cargando..." />
     </div>
 </body>
 </html>
