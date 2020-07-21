@@ -5,31 +5,35 @@
     <meta charset="utf-8" />
     <title>Prueba consumo de servicio REST</title>
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var url = 'http://localhost:41531/api/ProductArq';
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    var parser = new DOMParser();
+                    var xml = parser.parseFromString(data, "application/xml");
+                    document.getElementById('salida').textContent = data;
+                    console.log(xml);
+                    listaCategoria(xml);
+                });
+        })
+        function listaCategoria(x) {
+            let list = document.getElementById('idProducto');
+            let ids = document.getElementsByTagName('CategoryID');
+            for (var i = 0; i < ids.length; i++) {
+                var li = document.createElement('li');
+                var id = id[i].firstChild.nodeValue;
+                li.textContent = house;
+                list.appendChild(li);
+            }
 
-        fetch('http://localhost:41531/api/ProductArq')
-            .then((respuesta) => {
-                return respuesta.json();
-            }).then((respuesta) => {
-                debugger
-                document.getElementById('categoryID').value = respuesta.CategoryID;
-                document.getElementById('discontinued').value = respuesta.Discontinued;
-                document.getElementById('productID').value = respuesta.ProductID;
-                document.getElementById('productName').value = respuesta.ProductName;
-                document.getElementById('quantityPerUnit').value = respuesta.QuantityPerUnit;
-                document.getElementById('supplierID').value = respuesta.SupplierID;
-                document.getElementById('unitPrice').value = respuesta.UnitPrice;
-            })
+        }
     </script>
 </head>
 <body>
     <div id="informacion">
-        <input type="text" id="categoryID" value="cargando..." />
-        <input type="text" id="discontinued" value="cargando..." />
-        <input type="text" id="productID" value="cargando..." />
-        <input type="text" id="productName" value="cargando..." />
-        <input type="text" id="quantityPerUnit" value="cargando..." />
-        <input type="text" id="supplierID" value="cargando..." />
-        <input type="text" id="unitPrice" value="cargando..." />
+        <ul id="idProducto"></ul>
+        <pre id="salida"></pre>
     </div>
 </body>
 </html>
