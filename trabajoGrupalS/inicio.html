@@ -1,10 +1,23 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <!--Consumir servicio y mostrar resultados-->
     <meta charset="utf-8" />
-    <title></title>
+    <title>Prueba consumo de servicio REST</title>
+    <script>
+        fetch('https://www.raydelto.org/json.php')
+            .then((respuesta) => {
+                return respuesta.json();
+            }).then((respuesta) => {
+                document.getElementById('nombre').value = respuesta.name;
+                document.getElementById('apellido').value = respuesta.lastName;
+            })
+    </script>
 </head>
 <body>
-
+    <div id="informacion">
+        <input type="text" id="nombre" value="cargando..." />
+        <input type="text" id="apellido" value="cargando..." />
+    </div>
 </body>
 </html>
