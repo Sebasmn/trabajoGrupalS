@@ -31,6 +31,62 @@
     </script>
 </head>
 <body>
+
+    <div>
+        <br />
+        <table>
+            <tr>
+                <td>Id producto: </td>
+                <td><input id="IdProducto" type="text" /></td>
+            </tr>
+            <tr>
+                <td>
+                    Producto:
+                </td>
+
+                <td>
+                    <input id="NombreProducto" type="text" />
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Proveedor:
+                </td>
+                <td>
+                    <select id="ProveedorId" style="width:100%">
+                        <option></option>
+
+                    </select>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Categoria: </td>
+
+                <td>
+                    <select id="CategoriaId" style="width:100%">
+                        <option></option>
+
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Cantidad </td>
+                <td><input id="CantidadProducto" type="text" name="Cantidad: " /></td>
+            </tr>
+            <tr>
+                <td>Precio: </td>
+                <td><input id="PrecioUnitario" type="text" name="Precio: " /></td>
+            </tr>
+
+        </table>
+        <br />
+        <table style="width:100%;">
+            <tr><td>&nbsp; <input id="Button1" type="button" value="Insertar" /></td><td>&nbsp; <input id="Button2" type="button" value="Actualizar" /></td><td>&nbsp; <input id="Button3" type="button" value="Eliminar" /></td><td>&nbsp; <input id="Button4" type="button" value="Consultar" /></td></tr>
+        </table>
+
+    </div>
     <div id="informacion">
         <ul id="idProducto"></ul>
         <pre id="salida"></pre>
