@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="inicio.html" />
+    <Content Include="inicio.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
